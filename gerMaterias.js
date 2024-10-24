@@ -90,3 +90,27 @@ window.addEventListener('load', () => {
     // Exibe a data no elemento com id "TextData"
     document.getElementById('TextData').textContent = dataFormatada;
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const asideMapeamento = document.getElementById("mapeamento");
+    const body = document.body; // Obtém o elemento body
+
+    // Verifica se o elemento existe
+    if (asideMapeamento) {
+        asideMapeamento.addEventListener("click", function () {
+            // Adiciona ou remove a classe "expanded" para expandir ou recolher
+            asideMapeamento.classList.toggle("expanded");
+            body.classList.toggle("expanded"); // Adiciona ou remove a classe no body
+
+            // Redireciona para a página de mapeamento após um tempo
+            setTimeout(() => {
+                window.location.href = "/Mapeamento/mapeamento.html"; // Altere para o caminho correto
+            }, 800); // Aguarde um tempo antes de redirecionar, se desejar
+        });
+    } else {
+        console.error("Elemento com ID 'mapeamento' não encontrado.");
+    }
+});
+
+
